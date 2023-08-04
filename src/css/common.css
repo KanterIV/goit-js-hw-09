@@ -16,3 +16,31 @@ img {
   display: block;
   max-width: 100%;
 }
+
+.timer {
+  display: flex;
+  gap: 40px;
+
+  margin-top: 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.value {
+  width: 75px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 30;
+  border-radius: 20px;
+  background: linear-gradient(to right, blue, pink);
+}
+
+.label {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: cursive;
+}
