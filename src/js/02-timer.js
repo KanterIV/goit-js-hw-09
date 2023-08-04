@@ -56,7 +56,7 @@ function onStartTimerClick() {
   }, 1000);
 }
 
-function doubleNumber(value) {
+function addLeadingZero(value) {
   return String(value).padStart(2, '0');
 }
 
@@ -68,13 +68,13 @@ function convertMs(ms) {
   const day = hour * 24;
 
   // Remaining days
-  const days = doubleNumber(Math.floor(ms / day));
+  const days = addLeadingZero(Math.floor(ms / day));
   // Remaining hours
-  const hours = doubleNumber(Math.floor((ms % day) / hour));
+  const hours = addLeadingZero(Math.floor((ms % day) / hour));
   // Remaining minutes
-  const minutes = doubleNumber(Math.floor(((ms % day) % hour) / minute));
+  const minutes = addLeadingZero(Math.floor(((ms % day) % hour) / minute));
   // Remaining seconds
-  const seconds = doubleNumber(
+  const seconds = addLeadingZero(
     Math.floor((((ms % day) % hour) % minute) / second)
   );
 
