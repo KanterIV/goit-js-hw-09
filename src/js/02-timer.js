@@ -18,6 +18,7 @@ const options = {
   time_24hr: true,
   defaultDate: new Date(),
   minuteIncrement: 1,
+
   onClose(selectedDates) {
     if (selectedDates[0].getTime() < options.defaultDate.getTime()) {
       refs.startBtn.setAttribute('disabled', true);
@@ -29,6 +30,7 @@ const options = {
     }
   },
 };
+
 const fp = flatpickr(refs.dateInput, options);
 
 function onStartTimerClick() {
@@ -37,11 +39,12 @@ function onStartTimerClick() {
     const chosenTime = new Date(refs.dateInput.value).getTime();
     const timeDifference = chosenTime - currentTime;
     const convertTime = convertMs(timeDifference);
-    console.log(convertTime);
+
     refs.days.textContent = convertTime.days;
     refs.hours.textContent = convertTime.hours;
     refs.minutes.textContent = convertTime.minutes;
     refs.seconds.textContent = convertTime.seconds;
+
     if (
       refs.days.textContent === '00' &&
       refs.hours.textContent === '00' &&
