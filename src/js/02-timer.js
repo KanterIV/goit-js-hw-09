@@ -11,6 +11,7 @@ const refs = {
   seconds: document.querySelector('span[data-seconds]'),
 };
 
+refs.startBtn.setAttribute('disabled', true);
 refs.startBtn.addEventListener('click', onStartTimerClick);
 let intervalId;
 
@@ -35,6 +36,7 @@ const options = {
 const fp = flatpickr(refs.dateInput, options);
 
 function onStartTimerClick() {
+  refs.startBtn.setAttribute('disabled', true);
   intervalId = setInterval(() => {
     const currentTime = new Date().getTime();
     const chosenTime = new Date(refs.dateInput.value).getTime();
